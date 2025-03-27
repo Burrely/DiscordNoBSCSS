@@ -1,0 +1,39 @@
+[href="/library"] { /* Hide the library button. */
+  display: none;
+}
+[href="/store"] { /* Hide the Nitro button */
+  display: none;
+}
+[href="/shop"] { /* Hide the shop */
+  display: none;
+}
+[class*="upsell"] { /* Hide content that promotes advertising content */
+    display: none;
+}
+/* Hide promotions (specifically on start-up) */
+div > div > div > div:has([src*="promotions/premium-marketing"]) {
+    display: none;
+}
+
+/* Hide activities from friends list */
+div:has(> div > div[aria-label="Start An Activity"]) {
+    display: none;
+}
+
+/* Remove extra bar */
+ul[aria-label="Direct Messages"] div:nth-child(1 of div[class*="sectionDivider"]) {
+  display: none;
+}
+
+/* Thinner Title Bar */
+.visual-refresh {
+  --custom-app-top-bar-height: calc(12px + var(--space-sm));
+}
+
+
+/* UTILITY */
+
+/* Webcam flip fix */
+div > video[class*="mirror"] {
+    transform: scaleX(1);
+}
