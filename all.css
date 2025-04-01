@@ -16,7 +16,7 @@ div > div > div > div:has([src*="promotions/premium-marketing"]) {
 }
 
 /* Hide activities from friends list */
-div:has(> div > div[aria-label="Start An Activity"]) {
+div:has(> div > div[aria-label="Start An Activity"]), div:has(> h2 > div[aria-label="Start An Activity"]) {
     display: none;
 }
 
