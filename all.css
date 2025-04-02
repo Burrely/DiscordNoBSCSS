@@ -1,3 +1,6 @@
+/* DIRECT MESSAGES */
+
+/* Promotional */
 [href="/library"] { /* Hide the library button. */
   display: none;
 }
@@ -8,32 +11,34 @@
   display: none;
 }
 [class*="upsell"] { /* Hide content that promotes advertising content */
-    display: none;
+  display: none;
 }
-/* Hide promotions (specifically on start-up) */
-div > div > div > div:has([src*="promotions/premium-marketing"]) {
-    display: none;
-}
-
-/* Hide activities from friends list */
-div:has(> div > div[aria-label="Start An Activity"]), div:has(> h2 > div[aria-label="Start An Activity"]) {
-    display: none;
-}
-
-/* Remove extra bar */
-ul[aria-label="Direct Messages"] div:nth-child(1 of div[class*="sectionDivider"]) {
+div > div > div > div:has([src*="promotions/premium-marketing"]) { /* Hide promotions (specifically on start-up) */
   display: none;
 }
 
-/* Thinner Title Bar */
-.visual-refresh {
-  --custom-app-top-bar-height: calc(12px + var(--space-sm));
+/* Activities */
+div:has(> div > div[aria-label="Start An Activity"]), div:has(> h2 > div[aria-label="Start An Activity"]) { /* Hide activities from friends list */
+  display: none;
 }
+ul[aria-label="Direct Messages"] div:nth-child(2 of div[class*="sectionDivider"]) { /* Hide Activities divider */
+  display: none;
+}
+
 
 
 /* UTILITY */
 
-/* Webcam flip fix */
-div > video[class*="mirror"] {
-    transform: scaleX(1);
+/* Voice Chats */
+div > video[class*="mirror"] { /* Webcam flip fix */
+  transform: scaleX(1);
+}
+
+
+
+/* MISCELLANEOUS STYLING */
+
+/* Title Bar */
+.visual-refresh { /* Thinner Title Bar */
+  --custom-app-top-bar-height: calc(14px + var(--space-sm));
 }
