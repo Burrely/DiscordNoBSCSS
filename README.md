@@ -3,7 +3,7 @@ Custom CSS snippets to make Discord have a more tolerable experience.
 Examples of features and fixes are, but are not limited to:
 - Hiding Nitro, shop and library buttons on the contacts list.
 - Startup promotion prevention.
-- Camera mirror fix. 
+- Camera mirror fix.
 
 > [!TIP]
 > Using a third-party client or extension that can load in custom css for Discord is recommended.<br>
@@ -21,7 +21,7 @@ The snippets are sorted based on their functionality. Pick and choose as you lik
   <summary>
     <h3>Full Snippet</h3>
   </summary>
-  
+
 ```css
 /* DIRECT MESSAGES */
 
@@ -50,6 +50,14 @@ ul[aria-label="Direct Messages"] div:nth-child(2 of div[class*="sectionDivider"]
   display: none;
 }
 
+div[aria-label="Members"] :nth-child(1 of h3[class*="membersGroup"]){ /* Hide Activities popout */
+  display: none;
+}
+
+div[aria-label="Members"] > div:has(> div[data-list-item-id*="members"]) { /* Hide server Activites */
+  display: none;
+}
+
 
 
 /* UTILITY */
@@ -67,6 +75,12 @@ div > video[class*="mirror"] { /* Webcam flip fix */
 .visual-refresh { /* Thinner Title Bar */
   --custom-app-top-bar-height: calc(14px + var(--space-sm));
 }
+
+/* Hide user "flair" */
+ul[aria-label="Direct Messages"] li[class*="channel"] div > div:has(> div[class*="videoContainer"]),
+div[role="list"] div > div > div:has(> div[class*="videoContainer"]){
+  display: none;
+}
 ```
 </details>
 
@@ -74,7 +88,7 @@ div > video[class*="mirror"] { /* Webcam flip fix */
   <summary>
     <h3>Promotions / Ads only Snippet</h3>
   </summary>
-  
+
   ```css
 /* DIRECT MESSAGES */
 
@@ -102,6 +116,14 @@ div:has(> div > div[aria-label="Start An Activity"]), div:has(> h2 > div[aria-la
 ul[aria-label="Direct Messages"] div:nth-child(2 of div[class*="sectionDivider"]) { /* Hide Activities divider */
   display: none;
 }
+
+div[aria-label="Members"] :nth-child(1 of h3[class*="membersGroup"]){ /* Hide Activities popout */
+  display: none;
+}
+
+div[aria-label="Members"] > div:has(> div[data-list-item-id*="members"]) { /* Hide server Activites */
+  display: none;
+}
   ```
 </details>
 
@@ -111,7 +133,7 @@ ul[aria-label="Direct Messages"] div:nth-child(2 of div[class*="sectionDivider"]
   <summary>
     <h3>Utility Snippet</h3>
   </summary>
-  
+
   ```css
 /* UTILITY */
 
@@ -128,13 +150,19 @@ div > video[class*="mirror"] { /* Webcam flip fix */
   <summary>
     <h3>Miscellaneous Snippet</h3>
   </summary>
-  
+
   ```css
 /* MISCELLANEOUS STYLING */
 
 /* Title Bar */
 .visual-refresh { /* Thinner Title Bar */
   --custom-app-top-bar-height: calc(14px + var(--space-sm));
+}
+
+/* Hide user "flair" */
+ul[aria-label="Direct Messages"] li[class*="channel"] div > div:has(> div[class*="videoContainer"]),
+div[role="list"] div > div > div:has(> div[class*="videoContainer"]){
+  display: none;
 }
   ```
 </details>

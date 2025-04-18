@@ -1,44 +1,70 @@
 /* DIRECT MESSAGES */
 
 /* Promotional */
-[href="/library"] { /* Hide the library button. */
-  display: none;
+[href="/library"] {
+    /* Hide the library button. */
+    display: none;
 }
-[href="/store"] { /* Hide the Nitro button */
-  display: none;
+[href="/store"] {
+    /* Hide the Nitro button */
+    display: none;
 }
-[href="/shop"] { /* Hide the shop */
-  display: none;
+[href="/shop"] {
+    /* Hide the shop */
+    display: none;
 }
-[class*="upsell"] { /* Hide content that promotes advertising content */
-  display: none;
+[class*="upsell"] {
+    /* Hide content that promotes advertising content */
+    display: none;
 }
-div > div > div > div:has([src*="promotions/premium-marketing"]) { /* Hide promotions (specifically on start-up) */
-  display: none;
+div > div > div > div:has([src*="promotions/premium-marketing"]) {
+    /* Hide promotions (specifically on start-up) */
+    display: none;
 }
 
 /* Activities */
-div:has(> div > div[aria-label="Start An Activity"]), div:has(> h2 > div[aria-label="Start An Activity"]) { /* Hide activities from friends list */
-  display: none;
+div:has(> div > div[aria-label="Start An Activity"]),
+div:has(> h2 > div[aria-label="Start An Activity"]) {
+    /* Hide activities from friends list */
+    display: none;
 }
-ul[aria-label="Direct Messages"] div:nth-child(2 of div[class*="sectionDivider"]) { /* Hide Activities divider */
-  display: none;
+ul[aria-label="Direct Messages"]
+    div:nth-child(2 of div[class*="sectionDivider"]) {
+    /* Hide Activities divider */
+    display: none;
 }
 
+div[aria-label="Members"] :nth-child(1 of h3[class*="membersGroup"]) {
+    /* Hide Activities popout */
+    display: none;
+}
 
+div[aria-label="Members"] > div:has(> div[data-list-item-id*="members"]) {
+    /* Hide server Activites */
+    display: none;
+}
 
 /* UTILITY */
 
 /* Voice Chats */
-div > video[class*="mirror"] { /* Webcam flip fix */
-  transform: scaleX(1);
+div > video[class*="mirror"] {
+    /* Webcam flip fix */
+    transform: scaleX(1);
 }
-
-
 
 /* MISCELLANEOUS STYLING */
 
 /* Title Bar */
-.visual-refresh { /* Thinner Title Bar */
-  --custom-app-top-bar-height: calc(14px + var(--space-sm));
+.visual-refresh {
+    /* Thinner Title Bar */
+    --custom-app-top-bar-height: calc(14px + var(--space-sm));
+}
+
+/* Hide user "flair" */
+ul[aria-label="Direct Messages"]
+    li[class*="channel"]
+    div
+    > div:has(> div[class*="videoContainer"]),
+div[role="list"] div > div > div:has(> div[class*="videoContainer"]) {
+    display: none;
 }
