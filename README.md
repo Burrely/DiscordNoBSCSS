@@ -50,8 +50,9 @@ ul[aria-label="Direct Messages"] div:nth-child(2 of div[class*="sectionDivider"]
   display: none;
 }
 
-div[aria-label="Members"] :nth-child(1 of h3[class*="membersGroup"]){ /* Hide Activities popout */
-  display: none;
+div[aria-label="Members"] :nth-child(1 of h3[class*="membersGroup"]:has(span[role="button"])) {
+    /* Hide Activities popout */
+    display: none;
 }
 
 div[aria-label="Members"] > div:has(> div[data-list-item-id*="members"]) { /* Hide server Activites */
@@ -80,6 +81,32 @@ div > video[class*="mirror"] { /* Webcam flip fix */
 ul[aria-label="Direct Messages"] li[class*="channel"] div > div:has(> div[class*="videoContainer"]),
 div[role="list"] div > div > div:has(> div[class*="videoContainer"]){
   display: none;
+}
+
+/* Hide Title Text*/
+div[class*="title"] > div[class*="title"]:has(> svg),
+div[class*="title"] > div[class*="title"]:has(> div[class*="icon"]) {
+    display: none;
+}
+
+/* Hide Help Button */
+a:has(> div[aria-label="Help"]) {
+    display: none;
+}
+
+/* Hide Inbox Button */
+div:has(> div[aria-label="Inbox"]) {
+    display: none;
+}
+
+/* Hide Animated Profile */
+div[class*="custom-user-profile-theme"] > div[class*="panel"] > div[class*="profileEffects"] {
+    display: none;
+}
+
+/* Hide Animated Avatar */
+div[class*="avatar"] svg[class*="avatarDecoration"] {
+    display: none;
 }
 ```
 </details>
@@ -117,8 +144,9 @@ ul[aria-label="Direct Messages"] div:nth-child(2 of div[class*="sectionDivider"]
   display: none;
 }
 
-div[aria-label="Members"] :nth-child(1 of h3[class*="membersGroup"]){ /* Hide Activities popout */
-  display: none;
+div[aria-label="Members"] :nth-child(1 of h3[class*="membersGroup"]:has(span[role="button"])) {
+    /* Hide Activities popout */
+    display: none;
 }
 
 div[aria-label="Members"] > div:has(> div[data-list-item-id*="members"]) { /* Hide server Activites */
@@ -163,6 +191,32 @@ div > video[class*="mirror"] { /* Webcam flip fix */
 ul[aria-label="Direct Messages"] li[class*="channel"] div > div:has(> div[class*="videoContainer"]),
 div[role="list"] div > div > div:has(> div[class*="videoContainer"]){
   display: none;
+}
+
+/* Hide Title Text*/
+div[class*="title"] > div[class*="title"]:has(> svg),
+div[class*="title"] > div[class*="title"]:has(> div[class*="icon"]) {
+    display: none;
+}
+
+/* Hide Help Button */
+a:has(> div[aria-label="Help"]) {
+    display: none;
+}
+
+/* Hide Inbox Button */
+div:has(> div[aria-label="Inbox"]) {
+    display: none;
+}
+
+/* Hide Animated Profile */
+div[class*="custom-user-profile-theme"] > div[class*="panel"] > div[class*="profileEffects"] {
+    display: none;
+}
+
+/* Hide Animated Avatar */
+div[class*="avatar"] svg[class*="avatarDecoration"] {
+    display: none;
 }
   ```
 </details>
