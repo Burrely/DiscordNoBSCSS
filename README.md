@@ -100,12 +100,12 @@ div:has(> div[aria-label="Inbox"]) {
 }
 
 /* Hide Animated Profile */
-div[class*="custom-user-profile-theme"] > div[class*="panel"] > div[class*="profileEffects"] {
+div[class*="profileEffects"] {
     display: none;
 }
 
 /* Hide Animated Avatar */
-div[class*="avatar"] svg[class*="avatarDecoration"] {
+svg[class*="avatarDecoration"] {
     display: none;
 }
 ```
@@ -210,12 +210,12 @@ div:has(> div[aria-label="Inbox"]) {
 }
 
 /* Hide Animated Profile */
-div[class*="custom-user-profile-theme"] > div[class*="panel"] > div[class*="profileEffects"] {
+div[class*="profileEffects"] {
     display: none;
 }
 
 /* Hide Animated Avatar */
-div[class*="avatar"] svg[class*="avatarDecoration"] {
+svg[class*="avatarDecoration"] {
     display: none;
 }
   ```
