@@ -42,6 +42,11 @@ div > div > div > div:has([src*="promotions/premium-marketing"]) { /* Hide promo
   display: none;
 }
 
+/* Hide Promoted Quests */
+div:has(> div > div > div[class*="promotedTag"]) {
+    display: none;
+}
+
 /* Activities */
 div:has(> div > div[aria-label="Start An Activity"]), div:has(> h2 > div[aria-label="Start An Activity"]) { /* Hide activities from friends list */
   display: none;
@@ -134,6 +139,11 @@ svg[class*="avatarDecoration"] {
 }
 div > div > div > div:has([src*="promotions/premium-marketing"]) { /* Hide promotions (specifically on start-up) */
   display: none;
+}
+
+/* Hide Promoted Quests */
+div:has(> div > div > div[class*="promotedTag"]) {
+    display: none;
 }
 
 /* Activities */
